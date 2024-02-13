@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--descripcion-->
+    <meta name="description" content="Somos una tienda de ropa comprometida con la calidad y la moda. Descubre nuestra historia y misión.">
+    <!--palabras claves-->
+    <meta name="keywords" content="Historia de la tienda, Nuestra misión, Valores de la empresa, Equipo de diseño, Compromiso con la moda, Filosofía de la moda, Visión de la tienda, Historia de la marca, Nuestra pasión por la moda, Experiencia en la industria, Compromiso con la calidad, Valores de sostenibilidad, Innovación en la moda, Nuestra historia, Conexión con los clientes, Nuestra visión, Dedicación a la moda, Compromiso con la excelencia, Fundadores de la tienda, Trasfondo de la empresa">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Sobre Nosotros</title>
+</head>
+<body class="body__grid">
+    <header>
+        <div class="header__grid">
+            <!--Logo-->
+            <a href="../index.html">
+            <img class="header__logo" src="../assets/logo.png" alt="logo de le pendu">
+            </a>
+            <!--¿Que estas buscando?-->
+            <div>
+            <input class="header__buscador" type="text" name="¿Qué estás buscando?" placeholder="¿Qué estás buscando?">
+            </div>
+            <!--Menu navegable superior derecho-->
+            <nav class="header__nav__derecho">
+                <div class="header__nav__derecho--div">
+                    <button class="btn btn-primary" type="button"><a href="../pages/contacto.html"><img class="header__nav__derecho--img" src="../assets/ayuda.svg" alt="mi carrito"></a></button>
+                    <button class="btn btn-primary" type="button"><a href="../pages/contacto.html"><p class="header__nav__derecho--p">Ayuda</p></a></button>
+                </div>
+                <div class="header__nav__derecho--div">
+                    <button class="btn btn-primary" type="button"><a href="#"><img class="header__nav__derecho--img" src="../assets/mi-cuenta.svg" alt="mi carrito"></a></button>
+                    <button class="btn btn-primary" type="button"><a href="#"><p class="header__nav__derecho--p">Mi cuenta</p></a></button>
+                </div>
+                <!--boton de compras-->
+                <div class="header__nav__derecho--div">
+                    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img class="header__nav__derecho--img" src="../assets/mi-carrito.svg" alt="mi carrito"></button>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Mi carrito</button>
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                        <div class="offcanvas-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"><img class="header__nav__derecho--atras" src="../assets/equis-atras.svg" alt="atras"></button>
+                            <h5 class="offcanvas-title" id="offcanvasRightLabel">Carrito de compras</h5>
+                        </div>
+                        <div class="offcanvas-body header__nav__carrito">
+                            <div class="header__nav__carrito--productos">
+                                <div class="header__nav__carrito-img">
+                                    <img class="header__nav__carrito--img" src="../assets/1.jpg" alt="foto del producto">
+                                </div>
+                                <h4 class="header__nav__carrito--h4">Zapatillas Pensford DC</h4>
+                                <img class="header__nav__carrito--trash" src="../assets/trash.svg" alt="eliminar del carrito">
+                                <h5 class="header__nav__carrito--h5">(Cod 6318) (Talle 42)</h5>
+                                <input class="header__nav__carrito--input" type="number" id="tentacles" name="tentacles" min="1" max="100"/>
+                                <h6 class="header__nav__carrito--h6">$55.000</h6>
+                            </div>
+                            <div class="header__nav__carrito--productos">
+                                <div class="header__nav__carrito-img">
+                                    <img class="header__nav__carrito--img" src="../assets/5.jpg" alt="foto del producto">
+                                </div>
+                                <h4 class="header__nav__carrito--h4">Zapatillas Midway DC</h4>
+                                <img class="header__nav__carrito--trash" src="../assets/trash.svg" alt="eliminar del carrito">
+                                <h5 class="header__nav__carrito--h5">(Cod 7090) (Talle 37)</h5>
+                                <input class="header__nav__carrito--input" type="number" name="tentacles" min="1" max="100"/>
+                                <h6 class="header__nav__carrito--h6">$45.600</h6>
+                            </div>
+                            <div class="header__nav__carrito--productos">
+                                <div class="header__nav__carrito-img">
+                                    <img class="header__nav__carrito--img" src="../assets/2.jpg" alt="foto del producto">
+                                </div>
+                                <h4 class="header__nav__carrito--h4">Zapatillas Manteca DC</h4>
+                                <img class="header__nav__carrito--trash" src="../assets/trash.svg" alt="eliminar del carrito">                                
+                                <h5 class="header__nav__carrito--h5">(Cod 6318) (Talle 42)</h5>
+                                <input class="header__nav__carrito--input" type="number" name="tentacles" min="1" max="100"/>
+                                <h6 class="header__nav__carrito--h6">$42.800</h6>
+                            </div>
+                            <div class="header__nav__carrito--subtotal">
+                                <h3>Sub total:</h3><h3 class="header__nav__carrito--h3">$143.400</h3>
+                            </div>
+                            <div class="header__nav__carrito--envio">
+                                <img class="header__nav__carrito--camion" src="../assets/envio.svg" alt="envio">
+                                <h4>Medios de envío</h4>
+                                <div class="header__nav__carrito--div">
+                                    <input class="header__nav__carrito--codigo-postal" type="text" name="tu codigo postal" placeholder="Tu código postal">
+                                    <button class="header__nav__carrito--button" >Calcular</button>
+                                </div>
+                                <h4 class="header__nav__carrito-h4">No sé mi código postal</h4>
+                            </div>
+                            <div class="header__nav__carrito-h3">
+                                <h3>Total:</h3><h3>$143.400</h3>
+                                <button class=" header__nav__carrito--button2">INICIAR COMPRA</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!--Menu Navegable-->
+        <nav class="header__nav">
+            <ul class="header__y__main__ul header__nav--ul">
+                <li><a class="header__nav--a" href="../index.html">Inicio</a></li>
+                <li><a class="header__nav--a" href="./hombres.html">Hombres</a></li>
+                <li><a class="header__nav--a" href="./mujeres.html">Mujeres</a></li>
+                <li><a class="header__nav--a" href="./sobre-nosotros.html">Sobre Nosotros</a></li>
+                <li><a class="header__nav--a" href="./contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!--main-->
+    <main class="main__nosotros__contacto">
+        <h1 class="main__nosotros__contacto--h1">Iniciá Sesión</h1>
+        <form class="main__mi-cuenta">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <button class="main__mi-cuenta--boton">Iniciar sesión</button>
+            <div class="mb-3">
+                <p>¿No tenés cuenta aún? <a  class="main__mi-cuenta--a" href="#">Crear cuenta</a></p>
+            </div>
+        </form>
+    </main>
+    <footer class="footer__grid">
+        <!--menu navegable footer-->
+        <nav class="footer__nav__inferior">
+            <a class="footer__nav__inferior--a" href="../index.html"><button class="footer__nav__inferior--button btn btn-primary" type="button"><img src="../assets/home.svg" alt="home"></button></a>
+            <button class="footer__nav__inferior--button btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><img src="../assets/menu.svg" alt="menu"></button>
+            <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+                <div class="offcanvas-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"><img src="../assets/equis-atras.svg" alt="atras"></button>
+                </div>
+                <br>
+                <div class="offcanvas-body">
+                    <nav class="footer__menu">
+                        <ul class="footer__menu--ul">
+                            <li class="footer__menu--li"><a class="footer__menu--a" href="../pages/hombres.html">Hombres</a></li>
+                            <li class="footer__menu--li"><a class="footer__menu--a" href="../pages/mujeres.html">Mujeres</a></li>
+                            <li class="footer__menu--li"><a class="footer__menu--a" href="../pages/sobre-nosotros.html">Sobre Nosotros</a></li>
+                            <li class="footer__menu--li"><a class="footer__menu--a"  href="../pages/contacto.html">Contacto</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!--LUPA-->
+            <button class="footer__nav__inferior--button btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><img src="../assets/lupa.svg" alt="buscar"></button>
+                <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                    <div class="offcanvas-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"><img src="../assets/equis-atras.svg" alt="atras"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div>
+                            <input class="footer__nav__inferior--input" type="text" name="¿Qué estás buscando?" placeholder="¿Qué estás buscando?">
+                        </div>
+                    </div>
+                </div>
+            <a class="footer__nav__inferior--a" href="../pages/mi-cuenta.html"><button class="footer__nav__inferior--button btn btn-primary"><img src="../assets/mi-cuenta.svg" alt="mi cuenta"></button></a>
+            <!--carrito-->
+            <button class="footer__nav__inferior--button btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"><img src="../assets/mi-carrito.svg" alt="mi carrito"></button>
+                <div class="offcanvas offcanvas--carrito offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                    <div class="offcanvas-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"><img src="../assets/equis-atras.svg" alt="atras"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div>
+                            <div class="footer__nav__carrito--productos">
+                                <div class="footer__nav__carrito-img">
+                                    <img class="footer__nav__carrito--img" src="../assets/1.jpg" alt="foto del producto">
+                                </div>
+                                <h4 class="footer__nav__carrito--h4">Zapatillas Pensford DC</h4>
+                                <img class="footer__nav__carrito--trash" src="../assets/trash.svg" alt="eliminar del carrito">
+                                <h5 class="footer__nav__carrito--h5">(Cod 6318) (Talle 42)</h5>
+                                <input class="footer__nav__carrito--input" type="number" name="tentacles" min="1" max="100"/>
+                                <h6 class="footer__nav__carrito--h6">$55.000</h6>
+                            </div>
+                            <div class="footer__nav__carrito--productos">
+                                <div class="footer__nav__carrito-img">
+                                    <img class="footer__nav__carrito--img" src="../assets/5.jpg" alt="foto del producto">
+                                </div>
+                                <h4 class="footer__nav__carrito--h4">Zapatillas Midway DC</h4>
+                                <img class="footer__nav__carrito--trash" src="../assets/trash.svg" alt="eliminar del carrito">
+                                <h5 class="footer__nav__carrito--h5">(Cod 7090) (Talle 37)</h5>
+                                <input class="footer__nav__carrito--input" type="number" name="tentacles" min="1" max="100"/>
+                                <h6 class="footer__nav__carrito--h6">$45.600</h6>
+                            </div>
+                            <div class="footer__nav__carrito--productos">
+                                <div class="footer__nav__carrito-img">
+                                    <img class="footer__nav__carrito--img" src="../assets/2.jpg" alt="foto del producto">
+                                </div>
+                                <h4 class="footer__nav__carrito--h4">Zapatillas Manteca DC</h4>
+                                <img class="footer__nav__carrito--trash" src="../assets/trash.svg" alt="eliminar del carrito">                                
+                                <h5 class="footer__nav__carrito--h5">(Cod 6318) (Talle 42)</h5>
+                                <input class="footer__nav__carrito--input" type="number" name="tentacles" min="1" max="100"/>
+                                <h6 class="footer__nav__carrito--h6">$42.800</h6>
+                            </div>
+                            <div class="footer__nav__carrito--subtotal">
+                                <h3>Sub total:</h3><h3 class="footer__nav__carrito--h3">$143.400</h3>
+                            </div>
+                            <div class="footer__nav__carrito--envio">
+                                <img class="footer__nav__carrito--camion" src="../assets/envio.svg" alt="envio">
+                                <h4>Medios de envío</h4>
+                                <div class="footer__nav__carrito--div">
+                                    <input class="footer__nav__carrito--codigo-postal" type="text" name="tu codigo postal" placeholder="Tu código postal">
+                                    <button class="footer__nav__carrito--button" >Calcular</button>
+                                </div>
+                                <h4 class="footer__nav__carrito-h4">No sé mi código postal</h4>
+                            </div>
+                            <div class="footer__nav__carrito-h3">
+                                <h3>Total:</h3><h3>$143.400</h3>
+                                <button class=" footer__nav__carrito--button2">INICIAR COMPRA</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </nav>
+        <!--informacion fija del footer-->
+        <div class="footer__div">
+            <h4>Horarios de atención</h4>
+            <br>
+            <p>Lunes a Viernes</p>
+            <p> De 10hs a 20hs</p>
+        </div>
+        <div class="footer__div">
+            <h4>Seguinos en:</H4>
+            <br>
+            <a href="https://www.facebook.com/" target="_blank"><img class="footer__redes" src="../assets/facebook.svg" alt="facebook"></a>
+            <a href="https://www.instagram.com/" target="_blank"><img class="footer__redes" src="../assets/instagram.svg" alt="instagram"></a>
+            <a href="https://twitter.com/?lang=es" target="_blank"><img class="footer__redes" src="../assets/twitter.svg" alt="twitter"></a>
+        </div>
+        <div class="footer__div">
+            <p>Copyright LE●PENDU- 2023. Todos los derechos reservados. Defensa de las y los consumidores. Para reclamos 
+            <a class="footer__link" href="https://www.argentina.gob.ar/produccion/defensadelconsumidor/formulario" target="_blank">ingrese aquí.</a></p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+

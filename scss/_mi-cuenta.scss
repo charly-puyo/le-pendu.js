@@ -1,0 +1,32 @@
+.main__mi-cuenta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    height: 330px;
+    width: 400px;
+    border-radius: 25px;
+    border: 2px solid #D3D3D3;
+    background-color: white;
+    margin: 40px;
+    padding: 40px;
+    .main__mi-cuenta--boton{
+        width: 8rem;
+        font-size: 0.9rem;
+        appearance: none;
+        padding: 0.5rem;
+        background-color: #00AAA9;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        margin-bottom: 1rem;
+        cursor: pointer;
+    }
+    .main__mi-cuenta--a{
+        text-decoration: none;
+        color: black;
+    }
+    .main__mi-cuenta--a:hover{
+        color: #00AAA9;
+    }
+}

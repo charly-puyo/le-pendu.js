@@ -1,0 +1,22 @@
+.footer__grid{
+    display: grid;
+    color: white;
+    background-color: black;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+    .footer__div{
+        padding: 1rem;
+    }
+    .footer__redes{
+        width: 3rem;
+        margin-right: 0.5rem;
+        margin-left: 0.5rem;
+    }
+    .footer__link{
+        color: white;
+        text-decoration: none;
+    }
+}
