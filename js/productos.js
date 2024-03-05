@@ -9,6 +9,7 @@ class Producto {
     }
 }
 
+//Array de productos
 const productosHombres = [
     new Producto("1", "../assets/1.jpg", "Zapatillas", "Pensford DC", 55000, 10),
     new Producto("2", "../assets/2.jpg", "Zapatillas", "Manteca DC", 42800),
@@ -156,7 +157,7 @@ function actualizarCarrito() {
 // Llama a esta función para inicializar el carrito si hay productos
 actualizarCarrito();
 
-// Add this function to calculate the total price
+// Funcion para calcular el total
 function calculateTotalPrice(carrito) {
     let totalPrice = 0;
     carrito.forEach(productoEnCarrito => {
@@ -166,12 +167,12 @@ function calculateTotalPrice(carrito) {
     return totalPrice;
 }
 
-// Update the TotalPriceProductos function
+// Actualiza TotalPriceProductos
 function actualizarTotalProductos() {
     const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
     const totalPrice = calculateTotalPrice(carrito);
 
-    // Update the total price in the HTML element
+    // Actualiza el precio toal en HTML
     const totalElement = document.querySelector('.header__nav__carrito-h3');
     totalElement.innerHTML = `
         <h3>Total:</h3><h3>$${totalPrice.toFixed(2)}</h3>
@@ -180,5 +181,5 @@ function actualizarTotalProductos() {
 }
 
 
-// Call the TotalPriceProductos function to display the initial total price
+//  Llama a la función TotalPriceProductos para mostrar el precio total
 actualizarTotalProductos();
