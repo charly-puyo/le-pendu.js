@@ -324,23 +324,6 @@ label {
   display: inline-block;
 }
 
-button {
-  border-radius: 0;
-}
-
-button:focus:not(:focus-visible) {
-  outline: 0;
-}
-
-button,
-select {
-  text-transform: none;
-}
-
-[role=button] {
-  cursor: pointer;
-}
-
 select {
   word-wrap: normal;
 }
@@ -6562,7 +6545,6 @@ textarea.form-control-lg {
 .offcanvas-body {
   flex-grow: 1;
   padding: var(--bs-offcanvas-padding-y) var(--bs-offcanvas-padding-x);
-  overflow-y: auto;
 }
 
 .placeholder {

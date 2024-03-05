@@ -3,20 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <!--descripcion-->
-    <meta name="description" content="¿Tienes alguna pregunta o comentario? Estamos aquí para ayudarte. Contáctanos por teléfono, correo electrónico o chat en vivo.">
+    <meta name="description" content="Descubre nuestra amplia selección de ropa de alta calidad para hombres, mujeres y niños.">
     <!--palabras claves-->
-    <meta name="keywords" content="Contacto tienda de ropa, Información de contacto, Contactar con la tienda, Dirección de la tienda, Teléfono de contacto, Correo electrónico de la tienda, Horario de atención, Servicio al cliente, Consultas de productos, Devoluciones y cambios, Soporte de ventas, Localización de la tienda, Preguntas frecuentes, Formulario de contacto, Comunicación con la tienda, Comentarios de clientes, Información de envío, Política de devoluciones, Ayuda al cliente, Soporte en línea">
-    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <meta name="keywords" content="Ropa de moda, Tienda de ropa en línea, Ropa para hombres, Ropa para mujeres, Ropa para niños, Moda urbana, Ropa de marca, Vestidos de noche, Ropa casual, Ropa de oficina, Ropa de deporte, Ropa de invierno, Ropa de verano, Camisetas personalizadas, Moda sostenible, Comprar ropa en línea, Tendencias de moda, Complementos de moda, Ofertas de ropa, Ropa elegante">
+    <!--titulo de la pagina-->
+    <meta property=”og:title” content="Bienvenidos a LE●PENDU"/>
+    <meta property=”og:image” content="./assets/error1"/>
+    <meta property=”og:url” content="https://le-pendubrc.com/" />
+    <meta property=”og:description” content="Descubre nuestra amplia selección de ropa de alta calidad para hombres, mujeres y niños." />
+    <meta property=”og:site_name” content="LE●PENDU" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">    
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/styles.css">
-    <title>Contacto</title>
+    <title>LE●PENDU</title>
 </head>
 <body class="body__grid">
     <header>
         <div class="header__grid">
             <!--Logo-->
-            <a href="../pages/index.html">
+            <a href="#">
             <img class="header__logo" src="../assets/logo.png" alt="logo de le pendu">
             </a>
             <!--¿Que estas buscando?-->
@@ -26,8 +35,8 @@
             <!--Menu navegable superior derecho-->
             <nav class="header__nav__derecho">
                 <div class="header__nav__derecho--div">
-                    <button class="btn btn-primary" type="button"><a href="#"><img class="header__nav__derecho--img" src="../assets/ayuda.svg" alt="mi carrito"></a></button>
-                    <button class="btn btn-primary" type="button"><a href="#"><p class="header__nav__derecho--p">Ayuda</p></a></button>
+                    <button class="btn btn-primary" type="button"><a href="../pages/contacto.html"><img class="header__nav__derecho--img" src="../assets/ayuda.svg" alt="mi carrito"></a></button>
+                    <button class="btn btn-primary" type="button"><a href="../pages/contacto.html"><p class="header__nav__derecho--p">Ayuda</p></a></button>
                 </div>
                 <div class="header__nav__derecho--div">
                     <button class="btn btn-primary" type="button"><a href="../pages/mi-cuenta.html"><img class="header__nav__derecho--img" src="../assets/mi-cuenta.svg" alt="mi carrito"></a></button>
@@ -50,49 +59,20 @@
                 </div>
             </nav>
         </div>
-        <!--Menu Navegable-->
+        <!--Menu navegable-->
         <nav class="header__nav" >
             <ul class="header__y__main__ul header__nav--ul">
                 <li id="navBar"></li>
             </ul>
         </nav>
     </header>
+    <!--main-->
     <main class="main__nosotros__contacto">
-        <h1 class="main__nosotros__contacto--h1">Contactate con nosotros</h1>
-        <article class="main__contacto">
-            <h1 class="main__nosotros__contacto--h1-2">Contactate con nosotros</h1>
-            <p class="main__article--p">Si desea solicitar información, rellene y envíe el siguiente formulario. Nuestro personal se pondrá en contacto con usted en breve.</p>
-            <form>
-                <div class="main__contacto--form">
-                    <input type="text" name="nombre" autocomplete="name" class="main__contacto--imput" placeholder="Nombre" required>
-                    <input type="email" class="main__contacto--imput" autocomplete="email" placeholder="Email" required>
-                    <input type="number" name="numeros" autocomplete="mobile" class="main__contacto--imput" placeholder="Telefono" required>
-                    <input type="text" name="asunto" class="main__contacto--imput" placeholder="Asunto">
-                    <textarea name="" class="main__contacto--textarea" cols="50" rows="10" placeholder="Mensaje"></textarea>
-                    <input class="main__contacto--boton" type="submit"> 
-                    <input class="main__contacto--boton" type="reset">
-                </div>   
-            </form>
-            <div class="main__contacto__container">
-                <div class="main__contacto--div">
-                    <img class="main__contacto--img" src="../assets/contacto.svg" alt="contacto">
-                    <h5>Teléfono</h5>
-                    <p>+1111111111</p>
-                </div>
-                <div class="main__contacto--div">
-                    <img class="main__contacto--img" src="../assets/mail.svg" alt="correo">
-                    <h5>Email</h5>
-                    <p>lependu@tienda.com</p>
-                </div>
-                <div class="main__contacto--div">
-                    <img class="main__contacto--img" src="../assets/ubicacion.svg" alt="direccion">
-                    <h5>Dirección</h5>
-                    <p>Pendu 1515, Bariloche</p>
-                </div>
-            </div>
-        </article>
+        <h1 class="main__nosotros__contacto--h1">La moda que marca tendencia</h1>
+        <img class="main__img" src="../assets/modelo.jpg" alt="foto de un modelo">
     </main>
     <footer class="footer__grid">
+        <nav class="footer__nav__inferior"></nav>
     </footer>
     <script src="../js/navbar.js"></script>
     <script src="../js/navbarMobile.js"></script>
@@ -101,5 +81,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
+
+
+
 
 

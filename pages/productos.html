@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--descripcion-->
-    <meta name="description" content="Somos una tienda de ropa comprometida con la calidad y la moda. Descubre nuestra historia y misión.">
+    <meta name="description" content="Explora nuestra gama de ropa deportiva, diseñada para mantenerte cómodo durante tus entrenamientos.">
     <!--palabras claves-->
-    <meta name="keywords" content="Historia de la tienda, Nuestra misión, Valores de la empresa, Equipo de diseño, Compromiso con la moda, Filosofía de la moda, Visión de la tienda, Historia de la marca, Nuestra pasión por la moda, Experiencia en la industria, Compromiso con la calidad, Valores de sostenibilidad, Innovación en la moda, Nuestra historia, Conexión con los clientes, Nuestra visión, Dedicación a la moda, Compromiso con la excelencia, Fundadores de la tienda, Trasfondo de la empresa">
+    <meta name="keywords" content="Moda masculina, Ropa para hombres, Camisas para caballeros, Ropa casual para hombres, Ropa de oficina para hombres, Ropa deportiva masculina, Pantalones de hombre, Chaquetas y abrigos para hombres, Ropa de baño para hombres, Ropa de noche para hombres, Camisetas para hombres, Ropa interior masculina, Moda de tallas grandes para hombres, Accesorios masculinos, Pantalones vaqueros para hombres, Trajes para hombres, Ropa de invierno para hombres, Ropa de verano para hombres, Sombreros y gorras para hombres, Ofertas de moda masculina">
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/styles.css">
-    <title>Sobre Nosotros</title>
+    <title>Ropa para Hombre</title>
 </head>
 <body class="body__grid">
     <header>
@@ -33,7 +33,7 @@
                     <button class="btn btn-primary" type="button"><a href="../pages/mi-cuenta.html"><img class="header__nav__derecho--img" src="../assets/mi-cuenta.svg" alt="mi carrito"></a></button>
                     <button class="btn btn-primary" type="button"><a href="../pages/mi-cuenta.html"><p class="header__nav__derecho--p">Mi cuenta</p></a></button>
                 </div>
-                <!--boton de compras-->
+                <!--CARRITO DE COMPRAS -->
                 <div class="header__nav__derecho--div">
                     <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img class="header__nav__derecho--img" src="../assets/mi-carrito.svg" alt="mi carrito"></button>
                     <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Mi carrito</button>
@@ -43,8 +43,10 @@
                             <h5 class="offcanvas-title" id="offcanvasRightLabel">Carrito de compras</h5>
                         </div>
                         <div class="offcanvas-body header__nav__carrito">
-                            <div class="header__nav__carrito-productos"></div>
-                            <div class="header__nav__carrito-h3"></div>
+                            <div class="offcanvas-body header__nav__carrito">
+                                <div class="header__nav__carrito-productos"></div>
+                                <div class="header__nav__carrito-h3"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -57,26 +59,46 @@
             </ul>
         </nav>
     </header>
-    <main class="main__nosotros__contacto">
-        <h1 class="main__nosotros__contacto--h1">Sobre Nosotros</h1>
-        <article class="main_article--fondo">
-            <section class="main_article--section">
-                <h1 class="main__nosotros__contacto--h1-2">Sobre Nosotros</h1>
-                <br>
-                <p class="main__article--p">Le-Pendu es mucho más que una tienda de ropa. Es el resultado de una historia de resiliencia y un sueño que se hizo realidad en medio de tiempos difíciles. Fundada por Carlos, un emprendedor apasionado por la moda, esta tienda nació en plena pandemia cuando enfrentaba el desafío de la pérdida de su empleo. Carlos decidió convertir la adversidad en oportunidad y crear un negocio que no solo le brindara un ingreso, sino que también le permitiera expresar su pasión por la moda. <br> La filosofía de Le-Pendu es simple pero poderosa: celebrar la diversidad, la inclusión y la autenticidad. En un mundo en constante cambio, Carlos quería crear un espacio donde las personas pudieran sentirse cómodas siendo ellas mismas y expresar su individualidad a través de la moda. Con una amplia variedad de estilos y prendas de vestir para todas las edades, Le-Pendu se convirtió en un punto de encuentro para aquellos que buscan ropa que refleje su personalidad.</p>
-            </section>
-            <div class="main__article--div">
-                <img  class="main__article--multimedia" src="../assets/local.jpg" alt="foto del local">
-                <iframe class="main__article--multimedia" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d192339.19916950475!2d-71.50472570020341!3d-41.127976779920324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x961a7b1520c860e5%3A0x8210ae97cb7b9a65!2sSan%20Carlos%20de%20Bariloche%2C%20R%C3%ADo%20Negro!5e0!3m2!1ses-419!2sar!4v1694664406231!5m2!1ses-419!2sar" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <main>
+        <!--form-selec-->
+        <section class="main__nav">
+            <div>
             </div>
-        </article>
+            <div>
+                <select class="main_nav--selector">
+                    <option value="mas vendido" selected>Mas vendido</option>
+                    <option value="mayor precio">Mayor precio</option>
+                    <option value="menor precio">Menor precio</option>
+                </select>
+            </div>
+        </section>
+        <div  class="main__grid">
+            <!--menu-solapa-izquierdo-->
+            <Article class="main__nav__izquierdo">
+                <nav>
+                    <ul class="header__y__main__ul">
+                        <h1>Productos</h1>
+                        <li>Todo</li>
+                        <li>Hombres</li>
+                        <li>Mujeres</li>
+                        <li>Buzos</li>
+                        <li>Pantalones</li>
+                    </ul>
+                </nav>
+            </Article>
+            <!--Grid productos-->
+            <div class="main__productos" id="productos"></div>
+        </div>
     </main>
+    <!--footer-->
     <footer class="footer__grid">
+        <nav class="footer__nav__inferior"></nav>
     </footer>
     <script src="../js/navbar.js"></script>
     <script src="../js/navbarMobile.js"></script>
     <script src="../js/productos.js"></script>
     <script src="../js/footer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
