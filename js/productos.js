@@ -170,6 +170,13 @@ function calculateTotalPrice(carrito) {
 // Actualiza TotalPriceProductos
 function actualizarTotalProductos() {
     const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+    if (carrito.length === 0) {
+        const totalElement = document.querySelector('.header__nav__carrito-h3');
+        totalElement.innerHTML = '<p>El carrito está vacío</p>';
+        return;
+    }
+
     const totalPrice = calculateTotalPrice(carrito);
 
     // Actualiza el precio toal en HTML
