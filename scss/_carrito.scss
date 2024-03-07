@@ -13,16 +13,18 @@
     box-sizing: border-box;
     margin-bottom: 1.2rem;
 }
+    .header__nav__carrito--trash{
+        cursor: pointer;
+        grid-area: img;
+        max-width: 1rem;
+        margin: 0.5rem 0 0rem 2rem;
+    }
     .header__nav__carrito--h4{
         padding-top: 0.4rem;
         width: 11rem;
         font-size: 0.9rem;
     }
-    .header__nav__carrito--trash{
-        grid-area: img;
-        max-width: 1rem;
-        margin: 0.5rem 0 0rem 3rem;
-    }
+
     .header__nav__carrito--h5{
         grid-area: h5;
         padding-bottom: 1.8rem;
@@ -33,12 +35,15 @@
     .header__nav__carrito-img{
         grid-area: div;
         margin-right: 1.2rem;
-        max-width: 108px;
-        max-height: 116px;
-        border-radius: 25px;
-        border: 2px solid #D3D3D3;
-        border-spacing: 1rem;
+        .header__nav__carrito--img{
+            max-width: 108px;
+            max-height: 116px;
+            border-radius: 25px;
+            border: 2px solid #D3D3D3;
+            border-spacing: 1rem;
+        }
     }
+    
     .header__nav__carrito--input{
         grid-area: input;
         border-radius: 15px;
@@ -102,7 +107,6 @@
             color: white;
             cursor: pointer;
             background-color: #00AAA9;
-            border: 0.1rem solid #00AAA9;
             border-radius: 0px 10px 10px 0px; 
             margin: 1rem 0.5rem 1rem 0;
         }
@@ -118,15 +122,28 @@
         padding-top: 2rem;
         border-top: 2px solid #D3D3D3;
     }
+
     .header__nav__carrito--button2{
         color: white;
-        cursor: pointer;
         background-color: #00AAA9;
         border: none;
+        cursor: pointer;
         height: 2.5rem;
         font-size: 1.4rem;
         width: 17rem;
         margin-top: 1rem;
         margin-bottom: 2rem;
         border-radius: 15px; 
-    }          
+    }    
+    .header__nav__carrito--button2:hover{
+    transition: all .4s ease;
+    background-color: #00cece; 
+}
+
+
+    .header__nav__carrito--mensaje-vacio {
+        text-align: center;
+        padding: 2rem;
+        font-size: 1.2rem;
+        color: #666;
+        }

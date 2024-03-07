@@ -19,6 +19,17 @@ divHorarios.appendChild(document.createElement("br"));
 divHorarios.appendChild(pLunesViernes);
 divHorarios.appendChild(pHorario);
 
+// Obtener la ruta base para las imágenes
+let rutaBaseImagenes = "../assets/";
+
+// Obtener la URL base de la página actual
+const urlBase = document.documentElement.baseURI;
+
+// Si se lee desde index.html, cambiar la ruta base
+if (urlBase.endsWith("index.html")) {
+    rutaBaseImagenes = "./assets/";
+}
+
 // Crear div para seguir en redes sociales
 const divRedes = document.createElement("div");
 divRedes.classList.add("footer__div", "seguinosRedes");
@@ -27,34 +38,34 @@ const h4Redes = document.createElement("h4");
 h4Redes.textContent = "Seguinos en:";
 
 const aFacebook = document.createElement("a");
-aFacebook.href = "https://www.facebook.com/";
+aFacebook.href = rutaBaseImagenes + "facebook.svg";
 aFacebook.target = "_blank";
 
 const imgFacebook = document.createElement("img");
 imgFacebook.classList.add("footer__redes");
-imgFacebook.src = "../assets/facebook.svg";
+imgFacebook.src = rutaBaseImagenes + "facebook.svg";
 imgFacebook.alt = "facebook";
 
 aFacebook.appendChild(imgFacebook);
 
 const aInstagram = document.createElement("a");
-aInstagram.href = "https://www.instagram.com/";
+aInstagram.href = rutaBaseImagenes + "instagram.svg";
 aInstagram.target = "_blank";
 
 const imgInstagram = document.createElement("img");
 imgInstagram.classList.add("footer__redes");
-imgInstagram.src = "../assets/instagram.svg";
+imgInstagram.src = rutaBaseImagenes + "instagram.svg";
 imgInstagram.alt = "instagram";
 
 aInstagram.appendChild(imgInstagram);
 
 const aTwitter = document.createElement("a");
-aTwitter.href = "https://twitter.com/?lang=es";
+aTwitter.href = rutaBaseImagenes + "twitter.svg";
 aTwitter.target = "_blank";
 
 const imgTwitter = document.createElement("img");
 imgTwitter.classList.add("footer__redes");
-imgTwitter.src = "../assets/twitter.svg";
+imgTwitter.src = rutaBaseImagenes + "twitter.svg";
 imgTwitter.alt = "twitter";
 
 aTwitter.appendChild(imgTwitter);
@@ -64,6 +75,10 @@ divRedes.appendChild(document.createElement("br"));
 divRedes.appendChild(aFacebook);
 divRedes.appendChild(aInstagram);
 divRedes.appendChild(aTwitter);
+
+// Agregar div a la página
+document.body.appendChild(divRedes);
+
 
 // Crear div para derechos de autor y reclamos
 const divDerechosAutor = document.createElement("div");
