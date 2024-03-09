@@ -4,10 +4,18 @@ function agregarAlCarrito(id, categoria, nombre, precio) {
     if (productoSeleccionado && productoSeleccionado.unidades > 0) {
         const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
         const productoEnCarrito = carrito.find(producto => producto.id === id);
+        
 
         if (productoEnCarrito) {
             productoEnCarrito.cantidad++;
             actualizarInputCarrito(id, productoEnCarrito.cantidad);
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Se añadio al carrito",
+                showConfirmButton: false,
+                timer: 1500
+                });
         } else {
             const productoEnCarrito = {
                 id,
@@ -118,13 +126,19 @@ function actualizarTotalProductos() {
 
     const totalPrice = calculateTotalPrice(carrito);
 
-    // Actualiza el precio toal en HTML
+    // Actualiza el precio total en HTML
     const totalElement = document.querySelector('.header__nav__carrito-h3');
     totalElement.innerHTML = `
-        <h3>Total:</h3><h3>$${totalPrice.toFixed(2)}</h3>
-        <button type="button" class="header__nav__carrito--button2">INICIAR COMPRA</button>
-    `;
+                            <h3>Total:</h3><h3>$${totalPrice.toFixed(2)}</h3>
+                            <button type="button" class="header__nav__carrito--button2" onclick="redirigirIniciarCompra()">INICIAR COMPRA</button>
+                            `
+;
 }
+
+function redirigirIniciarCompra(){
+    window.location.href = '../pages/iniciar-compra.html';
+}
+
 
 //  Llama a la función TotalPriceProductos para mostrar el precio total
 actualizarTotalProductos();
