@@ -101,3 +101,61 @@ document.addEventListener('productosAgregados', () => {
     const event = new Event('productosAgregados');
     document.dispatchEvent(event);
 });
+
+
+// Obtén el elemento del selector por su ID
+const selectorProductos = document.getElementById('ordenarProductos');
+
+// Agrega un evento de cambio al selector
+selectorProductos.addEventListener('change', function () {
+    // Obtén el valor seleccionado
+    const valorSeleccionado = selectorProductos.value;
+
+    // Realiza la ordenación basada en el valor seleccionado
+    switch (valorSeleccionado) {
+        case 'categoria':
+            ordenarPorCategoria();
+            break;
+        case 'mayor precio':
+            ordenarPorMayorPrecio();
+            break;
+        case 'menor precio':
+            ordenarPorMenorPrecio();
+            break;
+        default:
+            break;
+    }
+});
+
+// Función para ordenar por categoría
+function ordenarPorCategoria() {
+    todosLosProductos.sort((a, b) => a.categoria.localeCompare(b.categoria));
+    agregarCards(todosLosProductos);  
+
+    // Actualiza la presentación de los productos
+    agregarCards(todosLosProductos);
+}
+
+// Función para ordenar por mayor precio
+function ordenarPorMayorPrecio() {
+    todosLosProductos.sort((a, b) => b.precio - a.precio);
+
+    // Muestra en la consola los productos ordenados para depuración
+    console.log('Productos ordenados por mayor precio:', todosLosProductos);
+
+    // Actualiza la presentación de los productos
+    agregarCards(todosLosProductos);
+}
+
+// Función para ordenar por menor precio
+function ordenarPorMenorPrecio() {
+    todosLosProductos.sort((a, b) => a.precio - b.precio);
+
+    // Muestra en la consola los productos ordenados para depuración
+    console.log('Productos ordenados por menor precio:', todosLosProductos);
+
+    // Actualiza la presentación de los productos
+    agregarCards(todosLosProductos);
+}
+
+ordenarPorCategoria();

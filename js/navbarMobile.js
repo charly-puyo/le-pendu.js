@@ -1,150 +1,161 @@
-// Crear el elemento nav
+// Función para crear elementos de tipo 'a'
+function createLink(href, text, imgSrc, imgAlt) {
+    const a = document.createElement('a');
+    a.classList.add('footer__nav__inferior--a');
+    a.href = href;
+
+    if (text) {
+        const img = document.createElement('img');
+        img.src = imgSrc;
+        img.alt = imgAlt;
+        a.textContent = text;
+        a.appendChild(img);
+    }
+
+    return a;
+}
+
+// Función para crear botones con imágenes
+function createButton(imgSrc, imgAlt, datasetTarget) {
+    const button = document.createElement('button');
+    button.classList.add('footer__nav__inferior--button', 'btn', 'btn-primary');
+    button.type = 'button';
+
+    if (datasetTarget) {
+        button.dataset.bsToggle = 'offcanvas';
+        button.dataset.bsTarget = datasetTarget;
+        button.ariaControls = datasetTarget;
+    }
+
+    const img = document.createElement('img');
+    img.src = imgSrc;
+    img.alt = imgAlt;
+    button.appendChild(img);
+
+    return button;
+}
+
+// Función para crear elementos 'br'
+function createLineBreak() {
+    return document.createElement('br');
+}
+
+// Función para crear elementos 'input'
+function createSearchInput() {
+    const input = document.createElement('input');
+    input.classList.add('footer__nav__inferior--input');
+    input.type = 'text';
+    input.name = '¿Qué estás buscando?';
+    input.placeholder = '¿Qué estás buscando?';
+
+    return input;
+}
+
+// Crear el elemento 'nav'
 const nav = document.createElement('nav');
 nav.classList.add('footer__nav__inferior');
 
-// Crear el primer botón con enlace
-const button1 = document.createElement('button');
-button1.classList.add('footer__nav__inferior--button', 'btn', 'btn-primary');
-button1.type = 'button';
-const a1 = document.createElement('a');
-a1.classList.add('footer__nav__inferior--a');
-a1.href = '../pages/index.html';
-const img1 = document.createElement('img');
-img1.src = '../assets/home.svg';
-img1.alt = 'home';
-a1.appendChild(img1);
-button1.appendChild(a1);
-nav.appendChild(button1);
+// Definir la lista de elementos para el navbar
+const navbarElements = [
+    { type: 'button', text: 'Productos', imgSrc: '../assets/home.svg', imgAlt: 'home', href: '../pages/index.html' },
+    { type: 'button', imgSrc: '../assets/menu.svg', imgAlt: 'menu', datasetTarget: '#offcanvasWithBothOptions' },
+    { type: 'offcanvas', id: 'offcanvasWithBothOptions', imgSrc: '../assets/equis-atras.svg', class:"btn-close", imgAlt: 'atras', bodyContent: createLink('../pages/productos.html', 'Productos', '', '') },
+    { type: 'button', imgSrc: '../assets/lupa.svg', imgAlt: 'buscar', datasetTarget: '#offcanvasScrolling' },
+    { type: 'offcanvas', id: 'offcanvasScrolling', imgSrc: '../assets/equis-atras.svg', imgAlt: 'atras', bodyContent: createSearchInput() },
+    { type: 'button', text: 'Mi Cuenta', imgSrc: '../assets/mi-cuenta.svg', imgAlt: 'mi cuenta', href: '../pages/mi-cuenta.html' }
+];
 
-// Crear el segundo botón con offcanvas
-const button2 = document.createElement('button');
-button2.classList.add('footer__nav__inferior--button', 'btn', 'btn-primary');
-button2.type = 'button';
-button2.dataset.bsToggle = 'offcanvas';
-button2.dataset.bsTarget = '#offcanvasWithBothOptions';
-button2.ariaControls = 'offcanvasWithBothOptions';
-const img2 = document.createElement('img');
-img2.src = '../assets/menu.svg';
-img2.alt = 'menu';
-button2.appendChild(img2);
-nav.appendChild(button2);
+// Crear cada elemento del navbar
+navbarElements.forEach(element => {
+    switch (element.type) {
+        case 'button':
+            nav.appendChild(createButton(element.imgSrc, element.imgAlt, element.datasetTarget));
+            break;
+        case 'offcanvas':
+            const offcanvas = document.createElement('div');
+            offcanvas.classList.add('offcanvas', 'offcanvas-start');
+            offcanvas.dataset.bsScroll = 'true';
+            offcanvas.tabIndex = '-1';
+            offcanvas.id = element.id;
+            offcanvas.ariaLabelledby = `${element.id}Label`;
 
-// Crear el offcanvas
-const offcanvas1 = document.createElement('div');
-offcanvas1.classList.add('offcanvas', 'offcanvas-start');
-offcanvas1.dataset.bsScroll = 'true';
-offcanvas1.tabIndex = '-1';
-offcanvas1.id = 'offcanvasWithBothOptions';
-offcanvas1.ariaLabelledby = 'offcanvasWithBothOptionsLabel';
+            const offcanvasHeader = document.createElement('div');
+            offcanvasHeader.classList.add('offcanvas-header');
+            const btnClose = document.createElement('button');
+            btnClose.type = 'button';
+            btnClose.classList.add('btn-close', 'data-bs-dismiss', 'offcanvas', 'aria-label', 'Close');
+            const imgClose = document.createElement('img');
+            imgClose.src = element.imgSrc;
+            imgClose.alt = element.imgAlt;
+            btnClose.appendChild(imgClose);
+            offcanvasHeader.appendChild(btnClose);
+            offcanvas.appendChild(offcanvasHeader);
 
-// Crear el encabezado del offcanvas
-const offcanvasHeader1 = document.createElement('div');
-offcanvasHeader1.classList.add('offcanvas-header');
-const btnClose1 = document.createElement('button');
-btnClose1.type = 'button';
-btnClose1.classList.add('btn-close', 'data-bs-dismiss', 'offcanvas', 'aria-label', 'Close');
-const imgClose1 = document.createElement('img');
-imgClose1.src = '../assets/equis-atras.svg';
-imgClose1.alt = 'atras';
-btnClose1.appendChild(imgClose1);
-offcanvasHeader1.appendChild(btnClose1);
-offcanvas1.appendChild(offcanvasHeader1);
+            offcanvas.appendChild(createLineBreak());
 
-// Agregar una línea en blanco
-const br1 = document.createElement('br');
-offcanvas1.appendChild(br1);
+            const offcanvasBody = document.createElement('div');
+            offcanvasBody.classList.add('offcanvas-body');
 
-// Crear el cuerpo del offcanvas
-const offcanvasBody1 = document.createElement('div');
-offcanvasBody1.classList.add('offcanvas-body');
+            if (element.bodyContent) {
+                offcanvasBody.appendChild(element.bodyContent);
+            }
 
-// Crear el menú
-const footerMenu1 = document.createElement('nav');
-footerMenu1.classList.add('footer__menu');
-const ul1 = document.createElement('ul');
-ul1.classList.add('footer__menu--ul');
-const li1 = document.createElement('li');
-li1.classList.add('footer__menu--li');
-const a2 = document.createElement('a');
-a2.classList.add('footer__menu--a');
-a2.href = '../pages/productos.html';
-a2.textContent = 'Productos';
-li1.appendChild(a2);
-ul1.appendChild(li1);
-footerMenu1.appendChild(ul1);
-offcanvasBody1.appendChild(footerMenu1);
-offcanvas1.appendChild(offcanvasBody1);
+            offcanvas.appendChild(offcanvasBody);
 
-// Agregar el offcanvas al nav
-nav.appendChild(offcanvas1);
+            nav.appendChild(offcanvas);
+            break;
+    }
+});
 
-// Crear el tercer botón con offcanvas
-const button3 = document.createElement('button');
-button3.classList.add('footer__nav__inferior--button', 'btn', 'btn-primary');
-button3.type = 'button';
-button3.dataset.bsToggle = 'offcanvas';
-button3.dataset.bsTarget = '#offcanvasScrolling';
-button3.ariaControls = 'offcanvasScrolling';
-const img3 = document.createElement('img');
-img3.src = '../assets/lupa.svg';
-img3.alt = 'buscar';
-button3.appendChild(img3);
-nav.appendChild(button3);
+// ... (tu código existente)
 
-// Crear el segundo offcanvas
-const offcanvas2 = document.createElement('div');
-offcanvas2.classList.add('offcanvas', 'offcanvas-start');
-offcanvas2.dataset.bsScroll = 'true';
-offcanvas2.tabIndex = '-1';
-offcanvas2.id = 'offcanvasScrolling';
-offcanvas2.ariaLabelledby = 'offcanvasScrollingLabel';
+// Agregar el nuevo botón del carrito
+const carritoButton = document.createElement('button');
+carritoButton.classList.add('footer__nav__inferior--button', 'btn', 'btn-primary');
+carritoButton.type = 'button';
+carritoButton.dataset.bsToggle = 'offcanvas';
+carritoButton.dataset.bsTarget = '#offcanvasExample';
+carritoButton.ariaControls = 'offcanvasExample';
 
-// Crear el encabezado del offcanvas
-const offcanvasHeader2 = document.createElement('div');
-offcanvasHeader2.classList.add('offcanvas-header');
-const btnClose2 = document.createElement('button');
-btnClose2.type = 'button';
-btnClose2.classList.add('btn-close', 'data-bs-dismiss', 'offcanvas', 'aria-label', 'Close');
-const imgClose2 = document.createElement('img');
-imgClose2.src = '../assets/equis-atras.svg';
-imgClose2.alt = 'atras';
-btnClose2.appendChild(imgClose2);
-offcanvasHeader2.appendChild(btnClose2);
-offcanvas2.appendChild(offcanvasHeader2);
+const imgCarrito = document.createElement('img');
+imgCarrito.src = '../assets/mi-carrito.svg';
+imgCarrito.alt = 'mi carrito';
 
-// Agregar una línea en blanco
-const br2 = document.createElement('br');
-offcanvas2.appendChild(br2);
+carritoButton.appendChild(imgCarrito);
+nav.appendChild(carritoButton);
 
-// Crear el cuerpo del offcanvas
-const offcanvasBody2 = document.createElement('div');
-offcanvasBody2.classList.add('offcanvas-body');
+// Agregar el nuevo offcanvas del carrito
+const offcanvasCarrito = document.createElement('div');
+offcanvasCarrito.classList.add('offcanvas', 'offcanvas--carrito', 'offcanvas-start');
+offcanvasCarrito.tabIndex = '-1';
+offcanvasCarrito.id = 'offcanvasExample';
+offcanvasCarrito.ariaLabelledby = 'offcanvasExampleLabel';
 
-// Crear el input de búsqueda
-const input = document.createElement('input');
-input.classList.add('footer__nav__inferior--input');
-input.type = 'text';
-input.name = '¿Qué estás buscando?';
-input.placeholder = '¿Qué estás buscando?';
-offcanvasBody2.appendChild(input);
-offcanvas2.appendChild(offcanvasBody2);
+const offcanvasHeaderCarrito = document.createElement('div');
+offcanvasHeaderCarrito.classList.add('offcanvas-header');
 
-// Agregar el offcanvas al nav
-nav.appendChild(offcanvas2);
+const btnCloseCarrito = document.createElement('button');
+btnCloseCarrito.type = 'button';
+btnCloseCarrito.classList.add('btn-close', 'data-bs-dismiss', 'offcanvas', 'aria-label', 'Close');
 
-// Crear el cuarto botón
-const button4 = document.createElement('button');
-button4.classList.add('footer__nav__inferior--button', 'btn', 'btn-primary');
-button4.type = 'button';
-const a3 = document.createElement('a');
-a3.classList.add('footer__nav__inferior--a');
-a3.href = '../pages/mi-cuenta.html';
-const img4 = document.createElement('img');
-img4.src = '../assets/mi-cuenta.svg';
-img4.alt = 'mi cuenta';
-a3.appendChild(img4);
-button4.appendChild(a3);
-nav.appendChild(button4);
+const imgCloseCarrito = document.createElement('img');
+imgCloseCarrito.src = '../assets/equis-atras.svg';
+imgCloseCarrito.alt = 'atras';
+
+btnCloseCarrito.appendChild(imgCloseCarrito);
+offcanvasHeaderCarrito.appendChild(btnCloseCarrito);
+offcanvasCarrito.appendChild(offcanvasHeaderCarrito);
+
+const offcanvasBodyCarrito = document.createElement('div');
+offcanvasBodyCarrito.classList.add('offcanvas-body');
+
+const carritoProductos = document.createElement('div');
+carritoProductos.classList.add('footer__nav__carrito--productos');
+
+offcanvasBodyCarrito.appendChild(carritoProductos);
+offcanvasCarrito.appendChild(offcanvasBodyCarrito);
+
+document.body.appendChild(offcanvasCarrito);
 
 // Agregar el nav al body
 document.body.appendChild(nav);

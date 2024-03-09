@@ -579,9 +579,6 @@ a {
     border-radius: 10px 10px 10px 10px;
     margin: 0.5rem 0 0.5rem 0rem;
   }
-  .body__grid .main__productos .main__productos--button:hover {
-    display: none;
-  }
   .body__grid .main__productos .main__productos--img {
     max-width: 80%;
     margin: 0.9rem;
@@ -599,6 +596,11 @@ a {
     padding: 0.5rem;
     width: 150px;
     border-top: 3px solid #00AAA9;
+  }
+  .body__grid .main__productos .main_productos--contenedor:hover {
+    transform: none;
+    box-shadow: none;
+    transition: none;
   }
   .body__grid .main__nosotros__contacto {
     display: flex;
