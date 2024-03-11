@@ -7,12 +7,15 @@
         height: 160px;
         width: auto;
     }
-    .header__buscador{
+
+    .header__buscador {
+        position: relative;
         padding: 12px;
         width: 25rem;
         border-radius: 25px;
         border: 1px solid black;
     }
+    
     .header__nav__derecho{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;

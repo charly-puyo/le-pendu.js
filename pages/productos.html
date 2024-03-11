@@ -21,7 +21,8 @@
             </a>
             <!--¿Que estas buscando?-->
             <div>
-            <input class="header__buscador" type="text" name="¿Qué estás buscando?" placeholder="¿Qué estás buscando?">
+            <input id="buscadorInput" class="header__buscador" type="text" name="¿Qué estás buscando?" placeholder="¿Qué estás buscando?">
+            <ul id="opcionesBusqueda" class="header__buscador__opciones-busqueda"></ul>
             </div>
             <!--Menu navegable superior derecho-->
             <nav class="header__nav__derecho">
@@ -44,9 +45,7 @@
                         </div>
                         <div class="offcanvas-body header__nav__carrito">
                             <div class="header__nav__carrito-productos"></div>
-                            <div class="header__nav__carrito-h3">
-                                <button type="button" class="header__nav__carrito--button2" onclick="redirigirIniciarCompra()">INICIAR COMPRA</button>
-                            </div>
+                            <div class="header__nav__carrito-h3"></div>
                         </div>
                     </div>
                 </div>
@@ -74,7 +73,7 @@
         </section>
         <div  class="main__grid">
             <!--menu-solapa-izquierdo-->
-            <Article class="main__nav__izquierdo">
+            <div class="main__nav__izquierdo">
                 <nav>
                     <ul class="header__y__main__ul">
                         <h1>Productos</h1>
@@ -85,7 +84,7 @@
                         <li>Pantalones</li>
                     </ul>
                 </nav>
-            </Article>
+            </div>
             <!--Grid productos-->
             <div class="main__productos" id="productos"></div>
         </div>
@@ -93,7 +92,6 @@
     <!--footer-->
     <footer class="footer__grid">
         <nav class="footer__nav__inferior">
-
         </nav>
     </footer>
     <script src="../js/navbar.js"></script>

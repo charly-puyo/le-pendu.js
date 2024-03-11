@@ -4,18 +4,16 @@ function agregarAlCarrito(id, categoria, nombre, precio) {
     if (productoSeleccionado && productoSeleccionado.unidades > 0) {
         const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
         const productoEnCarrito = carrito.find(producto => producto.id === id);
-        
-
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Se añadio al carrito",
+            showConfirmButton: false,
+            timer: 1500
+            });
         if (productoEnCarrito) {
             productoEnCarrito.cantidad++;
             actualizarInputCarrito(id, productoEnCarrito.cantidad);
-            Swal.fire({
-                position: "top-end",
-                icon: "success",
-                title: "Se añadio al carrito",
-                showConfirmButton: false,
-                timer: 1500
-                });
         } else {
             const productoEnCarrito = {
                 id,
@@ -101,8 +99,83 @@ function actualizarCarrito() {
     actualizarTotalProductos();
 }
 
-// Llama a esta función para inicializar el carrito si hay productos
-actualizarCarrito();
+
+
+
+// Agrega un evento de escritura al campo de búsqueda
+document.addEventListener('DOMContentLoaded', () => {
+    const buscadorInput = document.getElementById('buscadorInput');
+    const opcionesBusqueda = document.getElementById('opcionesBusqueda'); // Agrega esta línea
+
+    // Simulación de datos de opciones
+    const opciones = ['Opción 1', 'Opción 2', 'Opción 3'];
+
+    // Agregar evento de escucha al input
+    buscadorInput.addEventListener('input', actualizarOpciones);
+
+    // Función para actualizar las opciones de búsqueda
+    function actualizarOpciones() {
+        const valorBusqueda = buscadorInput.value.toLowerCase();
+
+        // Filtrar opciones basadas en la entrada del usuario
+        const opcionesFiltradas = opciones.filter(opcion => opcion.toLowerCase().includes(valorBusqueda));
+
+        // Mostrar opciones en la lista
+        mostrarOpciones(opcionesFiltradas);
+    }
+
+    function mostrarOpciones(opcionesMostradas) {
+        // Limpiar lista
+        opcionesBusqueda.innerHTML = '';
+    
+        if (opcionesMostradas.length > 0) {
+            opcionesBusqueda.classList.add('mostrar-opciones');
+            // Agregar cada opción a la lista
+            opcionesMostradas.forEach(opcion => {
+                const li = document.createElement('li');
+                li.classList.add('header__buscador__opciones-busqueda-li');
+                li.textContent = opcion;
+                li.addEventListener('click', () => seleccionarOpcion(opcion));
+                opcionesBusqueda.appendChild(li);
+            });
+        } else {
+            opcionesBusqueda.classList.remove('mostrar-opciones');
+        }
+    }
+    
+    
+
+    function seleccionarOpcion(opcionSeleccionada) {
+        buscadorInput.value = opcionSeleccionada;
+
+        // Limpiar la lista después de seleccionar una opción
+        opcionesBusqueda.innerHTML = '';
+    }
+
+    // Función para filtrar productos basándose en la cadena de búsqueda
+    function filtrarProductos() {
+        const textoBusqueda = buscadorInput.value.toLowerCase();
+
+
+        // Filtra los productos que coinciden con la cadena de búsqueda
+        const productosFiltrados = todosLosProductos.filter(producto => {
+            const nombreProducto = `${producto.categoria} ${producto.nombre}`.toLowerCase();
+            return nombreProducto.includes(textoBusqueda);
+        });
+
+        // Actualiza las cards con los productos filtrados
+        agregarCards(productosFiltrados);
+    }
+
+    // Agrega el evento de escucha al input del buscador
+    buscadorInput.addEventListener('input', filtrarProductos);
+});
+
+
+
+
+
+
 
 // Funcion para calcular el total
 function calculateTotalPrice(carrito) {
@@ -130,15 +203,15 @@ function actualizarTotalProductos() {
     const totalElement = document.querySelector('.header__nav__carrito-h3');
     totalElement.innerHTML = `
                             <h3>Total:</h3><h3>$${totalPrice.toFixed(2)}</h3>
-                            <button type="button" class="header__nav__carrito--button2" onclick="redirigirIniciarCompra()">INICIAR COMPRA</button>
+                            <button id="carrito--button2" type="button" class="header__nav__carrito--button2" onclick="redirigirIniciarCompra()">INICIAR COMPRA</button>
                             `
 ;
 }
 
 function redirigirIniciarCompra(){
     window.location.href = '../pages/iniciar-compra.html';
+    
 }
-
 
 //  Llama a la función TotalPriceProductos para mostrar el precio total
 actualizarTotalProductos();

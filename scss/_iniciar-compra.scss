@@ -1,0 +1,56 @@
+.main__iniciar-compra{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+    align-items: center;
+    .main__iniciar-compra-article-datos{
+    display: flex;
+    flex-direction: column;
+    height: 330px;
+    width: 700px;
+    border-radius: 25px;
+    border: 2px solid #D3D3D3;
+    background-color: white;
+    margin: 40px;
+    padding: 40px;
+        .main__iniciar-compra-boton{
+            width: 8rem;
+            font-size: 0.9rem;
+            appearance: none;
+            padding: 0.5rem;
+            background-color: #00AAA9;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-left: 30.5rem;
+            cursor: pointer;
+        }
+    }
+    .main__iniciar-compra-article-productos{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        height: 330px;
+        width: 400px;
+        border-radius: 25px;
+        border: 2px solid #D3D3D3;
+        background-color: white;
+        margin: 40px;
+        padding-top: 40px;
+        .main__iniciar-compra-boton2{
+            width: 8rem;
+            font-size: 0.9rem;
+            appearance: none;
+            padding: 0.5rem;
+            background-color: #00AAA9;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    }
+
+}

@@ -12,36 +12,40 @@
     <link rel="stylesheet" href="../css/styles.css">
     <title>Contacto</title>
 </head>
-<body class="body__grid">
+<body class="">
     <header>
-        <div class="header__grid">
+        <div class="">
             <!--Logo-->
             <a href="../index.html">
             <img class="header__logo" src="../assets/logo.png" alt="logo de le pendu">
             </a>
         </div>
     </header>
-    <main class="main__nosotros__contacto">
-        <article>
-            <h1 class="main__nosotros__contacto--h1">Proceso de compra</h1>
-            <form class="main__mi-cuenta">
+    <main class="main__iniciar-compra">
+        <article class="main__iniciar-compra-article-datos">
+            <h1 class="main__iniciar-compra-h1">Proceso de compra</h1>
+            <form class="main__iniciar-compra-form">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Datos de contacto</label>
                     <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Datos de entrega</label>
-                    <input type="password" class="form-control" placeholder="Codigo postal" id="exampleInputPassword1">
+                    <div class="main__iniciar-compra-codigopostal">
+                        <input type="password" class="form-control" placeholder="Codigo postal" id="exampleInputPassword1">
+                        <a href="https://www.correoargentino.com.ar/formularios/cpa" target="_blank" rel="noopener noreferrer">Encontrá tu CP</a>
+                    </div>
                 </div>
-                <button class="main__mi-cuenta--boton">Iniciar sesión</button>
-                <div class="mb-3">
-                    <a href="https://www.correoargentino.com.ar/formularios/cpa" target="_blank" rel="noopener noreferrer">Encontrá tu CP</a>
-                </div>
+                <button class="main__iniciar-compra-boton">Continuar</button>
             </form>
         </article>
-        
-        <article>
-
+        <article class="main__iniciar-compra-article-productos">
+            <div class="header__nav__derecho--div">
+                <div class="offcanvas-body header__nav__carrito">
+                    <div class="header__nav__carrito-productos"></div>
+                </div>
+                <button class="main__iniciar-compra-boton2">Agregar cupon de descuento</button>
+            </div>
         </article>
     </main>
     <footer>

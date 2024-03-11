@@ -46,6 +46,7 @@ a {
   width: auto;
 }
 .header__grid .header__buscador {
+  position: relative;
   padding: 12px;
   width: 25rem;
   border-radius: 25px;
@@ -133,10 +134,10 @@ a {
 
 .main__grid {
   display: grid;
-  grid-template-areas: "article div";
+  grid-template-areas: "article div div div div";
 }
 .main__grid .main__nav__izquierdo {
-  padding: 3.5rem;
+  padding: 2.5rem;
 }
 .main__grid .main__productos {
   display: inline-flex;
@@ -170,6 +171,13 @@ a {
 .main__grid .main__productos .main_productos--contenedor .main__productos--button:hover {
   transition: all 0.4s ease;
   background-color: #00cece;
+}
+.main__grid .main__productos .main_productos--contenedor--mensaje {
+  height: auto;
+  border-radius: 25px;
+  box-sizing: border-box;
+  align-items: center;
+  padding: 0 30rem 10rem;
 }
 .main__grid .main__productos--img {
   max-width: 80%;
@@ -473,6 +481,62 @@ a {
 }
 .main__mi-cuenta .main__mi-cuenta--a:hover {
   color: #00AAA9;
+}
+
+.main__iniciar-compra {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+.main__iniciar-compra .main__iniciar-compra-article-datos {
+  display: flex;
+  flex-direction: column;
+  height: 330px;
+  width: 700px;
+  border-radius: 25px;
+  border: 2px solid #D3D3D3;
+  background-color: white;
+  margin: 40px;
+  padding: 40px;
+}
+.main__iniciar-compra .main__iniciar-compra-article-datos .main__iniciar-compra-boton {
+  width: 8rem;
+  font-size: 0.9rem;
+  appearance: none;
+  padding: 0.5rem;
+  background-color: #00AAA9;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-left: 30.5rem;
+  cursor: pointer;
+}
+.main__iniciar-compra .main__iniciar-compra-article-productos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  height: 330px;
+  width: 400px;
+  border-radius: 25px;
+  border: 2px solid #D3D3D3;
+  background-color: white;
+  margin: 40px;
+  padding-top: 40px;
+}
+.main__iniciar-compra .main__iniciar-compra-article-productos .main__iniciar-compra-boton2 {
+  width: 8rem;
+  font-size: 0.9rem;
+  appearance: none;
+  padding: 0.5rem;
+  background-color: #00AAA9;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .footer__grid {

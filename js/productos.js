@@ -76,9 +76,17 @@ function obtenerRutaImagen(imagenUrl) {
     // De lo contrario, devolver la ruta original
     return `../assets/${imagenUrl}`;
 }
-
 function agregarCards(productos) {
     contenedorProductos.innerHTML = '';
+
+    if (productos.length === 0) {
+        const mensaje = document.createElement("div");
+        mensaje.textContent = "No se encontraron productos.";
+        mensaje.classList.add("main_productos--contenedor--mensaje"); // Cambié card a mensaje
+        mensaje.classList.add("mensaje-no-resultados");
+        contenedorProductos.appendChild(mensaje);
+        return;
+    }
 
     productos.forEach(producto => {
         const card = document.createElement("div");
@@ -93,6 +101,8 @@ function agregarCards(productos) {
         contenedorProductos.appendChild(card);
     });
 }
+
+
 
 const todosLosProductos = productosHombres.concat(productosMujeres);
 agregarCards(todosLosProductos);
