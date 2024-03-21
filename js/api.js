@@ -1,4 +1,4 @@
-const url = "http://jsonplaceholder.typicode.com/users";
+const url = "https://jsonplaceholder.typicode.com/users";
 
 function normalizarTexto(texto) {
     if (!texto || typeof texto !== "string") {
