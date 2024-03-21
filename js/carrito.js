@@ -1,4 +1,6 @@
 function agregarAlCarrito(id, categoria, nombre, precio) {
+    //ASINCRONIA
+    setTimeout(() => {
     const productoSeleccionado = todosLosProductos.find(producto => producto.id === id);
 
     if (productoSeleccionado && productoSeleccionado.unidades > 0) {
@@ -34,6 +36,7 @@ function agregarAlCarrito(id, categoria, nombre, precio) {
     } else {
         Swal.fire("Sin Stock");
     }
+}, 100); // Espera 1 milisegundo antes de ejecutar la función
 }
 
 function actualizarInputCarrito(id, cantidad) {
@@ -101,75 +104,44 @@ function actualizarCarrito() {
 
 
 
-
-// Agrega un evento de escritura al campo de búsqueda
+//BUSCADOR 
 document.addEventListener('DOMContentLoaded', () => {
     const buscadorInput = document.getElementById('buscadorInput');
-    const opcionesBusqueda = document.getElementById('opcionesBusqueda'); // Agrega esta línea
+    const opcionesBusqueda = document.getElementById('opcionesBusqueda');
 
-    // Simulación de datos de opciones
-    const opciones = ['Opción 1', 'Opción 2', 'Opción 3'];
+    buscadorInput.addEventListener('input', filtrarProductos);
 
-    // Agregar evento de escucha al input
-    buscadorInput.addEventListener('input', actualizarOpciones);
-
-    // Función para actualizar las opciones de búsqueda
-    function actualizarOpciones() {
-        const valorBusqueda = buscadorInput.value.toLowerCase();
-
-        // Filtrar opciones basadas en la entrada del usuario
-        const opcionesFiltradas = opciones.filter(opcion => opcion.toLowerCase().includes(valorBusqueda));
-
-        // Mostrar opciones en la lista
-        mostrarOpciones(opcionesFiltradas);
+    function filtrarProductos() {
+        const valorBusqueda = buscadorInput.value.trim().toLowerCase();
+        const opcionesFiltradas = todosLosProductos.filter(producto => 
+            producto.nombre.toLowerCase().includes(valorBusqueda) ||
+            producto.categoria.toLowerCase().includes(valorBusqueda)
+        );
+        mostrarOpciones(opcionesFiltradas.map(producto => producto.categoria + " " + producto.nombre));
+        agregarCards(opcionesFiltradas);
     }
 
     function mostrarOpciones(opcionesMostradas) {
-        // Limpiar lista
         opcionesBusqueda.innerHTML = '';
-    
         if (opcionesMostradas.length > 0) {
             opcionesBusqueda.classList.add('mostrar-opciones');
-            // Agregar cada opción a la lista
             opcionesMostradas.forEach(opcion => {
                 const li = document.createElement('li');
                 li.classList.add('header__buscador__opciones-busqueda-li');
                 li.textContent = opcion;
-                li.addEventListener('click', () => seleccionarOpcion(opcion));
+                li.addEventListener('click', () => {
+                    buscadorInput.value = opcion;
+                    opcionesBusqueda.innerHTML = '';
+                    filtrarProductos();
+                });
                 opcionesBusqueda.appendChild(li);
             });
         } else {
             opcionesBusqueda.classList.remove('mostrar-opciones');
         }
     }
-    
-    
-
-    function seleccionarOpcion(opcionSeleccionada) {
-        buscadorInput.value = opcionSeleccionada;
-
-        // Limpiar la lista después de seleccionar una opción
-        opcionesBusqueda.innerHTML = '';
-    }
-
-    // Función para filtrar productos basándose en la cadena de búsqueda
-    function filtrarProductos() {
-        const textoBusqueda = buscadorInput.value.toLowerCase();
-
-
-        // Filtra los productos que coinciden con la cadena de búsqueda
-        const productosFiltrados = todosLosProductos.filter(producto => {
-            const nombreProducto = `${producto.categoria} ${producto.nombre}`.toLowerCase();
-            return nombreProducto.includes(textoBusqueda);
-        });
-
-        // Actualiza las cards con los productos filtrados
-        agregarCards(productosFiltrados);
-    }
-
-    // Agrega el evento de escucha al input del buscador
-    buscadorInput.addEventListener('input', filtrarProductos);
 });
+
 
 
 

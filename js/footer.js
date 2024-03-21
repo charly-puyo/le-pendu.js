@@ -39,6 +39,7 @@ h4Redes.textContent = "Seguinos en:";
 
 const aFacebook = document.createElement("a");
 aFacebook.href = rutaBaseImagenes + "facebook.svg";
+aFacebook.href = "https://www.facebook.com/";
 aFacebook.target = "_blank";
 
 const imgFacebook = document.createElement("img");
@@ -50,6 +51,7 @@ aFacebook.appendChild(imgFacebook);
 
 const aInstagram = document.createElement("a");
 aInstagram.href = rutaBaseImagenes + "instagram.svg";
+aInstagram.href = "https://www.instagram.com/";
 aInstagram.target = "_blank";
 
 const imgInstagram = document.createElement("img");
@@ -66,7 +68,9 @@ aTwitter.target = "_blank";
 const imgTwitter = document.createElement("img");
 imgTwitter.classList.add("footer__redes");
 imgTwitter.src = rutaBaseImagenes + "twitter.svg";
+aTwitter.href = "https://twitter.com/?lang=es";
 imgTwitter.alt = "twitter";
+
 
 aTwitter.appendChild(imgTwitter);
 
