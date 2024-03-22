@@ -20,42 +20,39 @@ function iniciarSesion() {
 
     const nombre = normalizarTexto(nombreElemento.value);
     const email = normalizarTexto(emailElemento.value);
-
-    const xhr = new XMLHttpRequest();
-
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
-            if (xhr.status === 200) {
-                const datos = JSON.parse(xhr.responseText);
-                console.log("Datos obtenidos de la API:", datos);
-
-                // Imprimir los datos ingresados para depuración
-                console.log("Nombre ingresado:", nombre);
-                console.log("Email ingresado:", email);
-
-                const usuarioValido = datos.find(usuario => {
-                    const nombreNormalizado = normalizarTexto(usuario.name);
-                    const emailNormalizado = normalizarTexto(usuario.email);
-                    console.log("Nombre normalizado en API:", nombreNormalizado);
-                    console.log("Email normalizado en API:", emailNormalizado);
-                    return nombreNormalizado === nombre && emailNormalizado === email;
-                });
-                if (usuarioValido) {
-                    Swal.fire("Iniciaste sesión correctamente.").then(() => {
-                        // Redireccionar
-                        setTimeout(() => {
-                            window.location.href = "../pages/productos.html";
-                        }, 100);
-                    });
-                } else {
-                    Swal.fire("Usuario inválido.");
-                }
-            } else {
-                alert("Error al obtener los datos.");
+    
+    // cargar los datos con fetch
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Error al obtener los datos.");
             }
-        }
-    };
+            return response.json();
+        })
+        .then(datos => {
+            console.log("Datos obtenidos de la API:", datos);
 
-    xhr.open("GET", url);
-    xhr.send();
+            const usuarioValido = datos.find(usuario => {
+                const nombreNormalizado = normalizarTexto(usuario.name);
+                const emailNormalizado = normalizarTexto(usuario.email);
+                console.log("Nombre normalizado en API:", nombreNormalizado);
+                console.log("Email normalizado en API:", emailNormalizado);
+                return nombreNormalizado === nombre && emailNormalizado === email;
+            });
+            if (usuarioValido) {
+                Swal.fire("Iniciaste sesión correctamente.").then(() => {
+                    // Redireccionar
+                    setTimeout(() => {
+                        window.location.href = "../pages/productos.html";
+                    }, 100);
+                });
+            } else {
+                Swal.fire("Usuario inválido.");
+            }
+        })
+        .catch(error => {
+            alert(error.message);
+        });
 }
+
+//entrega final
